@@ -25,6 +25,10 @@ Eclipse Phase 2nd Edition Foundry VTT -- Tablerules and Configuration Module
 | Key | Value |
 | --------------- | ---------------  |
 | `title` | `Eclipse Phase 2e` |
+| `id` | `eclipsephase` |
+| `download` | `https://github.com/DerDiemen/eclipsephase/archive/v0.9.8/eclipsephase-0.9.8.zip` |
+| `manifest` | `https://github.com/DerDiemen/eclipsephase2e-foundryVTT/raw/v0.9.8/system.json` |
+| `url` | `https://github.com/DerDiemen/eclipsephase` |
 
 
 ## Modules
