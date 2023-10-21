@@ -70,6 +70,36 @@ class TRUtils {
             requiresReload: true
         });
 
+        game.settings.register(MODULE_SCOPE, "modifyChatBubbles", {
+            name: "modify the default for Chat Bubbles",
+            hint: "modifies the default for Chat Bubbles. Users can still overwrite this changed default.",
+            scope: "world",
+            config: true,
+            default: true,
+            type: Boolean,
+            requiresReload: true
+        });
+
+        game.settings.register(MODULE_SCOPE, "chatBubbles", {
+            name: "chatBubbles default overwrite",
+            hint: "if Modify Chat Bubbles is enabled, overwrite the default setting for displaying chat Bubbles",
+            scope: "world",
+            config: true,
+            default: true,
+            type: Boolean,
+            requiresReload: true
+        });
+
+        game.settings.register(MODULE_SCOPE, "chatBubblesPan", {
+            name: "chatBubbles Pan default overwrite",
+            hint: "if Modify Chat Bubbles is enabled, overwrite the default setting for displaying chat Bubbles",
+            scope: "world",
+            config: true,
+            default: false,
+            type: Boolean,
+            requiresReload: true
+        });
+
         game.settings.register(MODULE_SCOPE, "logLevel", {
             name: "Log Level",
             hint: "The Module's own log level. By default FVTT and the module don't log debug and info. Set to error for normal operation and debug for development.",
@@ -99,6 +129,7 @@ class TRUtils {
 }
 
 class Tablerules {
+
     static log(level, message) {
         let levelstring;
 
@@ -203,5 +234,35 @@ Hooks.on("preCreateChatMessage", (messageDoc, rawMessageData, context, userId) =
     }
 });
 
+Hooks.on("ready", function () {
+    console.log("Tablerules hooked onto ready.");
+
+    if (game.settings.get(MODULE_SCOPE, "modifyDefaultVolumes")) {
+        if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.globalPlaylistVolume").value.default === game.settings.get("core", "globalPlaylistVolume")) {
+            game.settings.set("core", "globalPlaylistVolume", game.user.flags?.world?.globalPlaylistVolume ?? game.settings.get(MODULE_SCOPE, "globalPlaylistVolume"));
+        }
+
+        if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.globalAmbientVolume").value.default === game.settings.get("core", "globalAmbientVolume")) {
+            game.settings.set("core", "globalAmbientVolume", game.user.flags?.world?.globalAmbientVolume ?? game.settings.get(MODULE_SCOPE, "globalAmbientVolume"));
+        }
+
+        if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.globalInterfaceVolume").value.default === game.settings.get("core", "globalInterfaceVolume")) {
+            game.settings.set("core", "globalInterfaceVolume", game.user.flags?.world?.globalInterfaceVolume ?? game.settings.get(MODULE_SCOPE, "globalInterfaceVolume"));
+        }
+
+        ui.sidebar.tabs.playlists.render();
+    }
+
+    if (game.seetings.get(MODULE_SCOPE, "modifyChatBubbles")) {
+        if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.chatBubbles").value.default === game.settings.get("core", "chatBubbles")) {
+            game.settings.set("core", "chatBubbles", game.user.flags?.world?.globalInterfaceVolume ?? game.settings.get(MODULE_SCOPE, "chatBubbles"));
+        }
+
+        if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.chatBubblesPan").value.default === game.settings.get("core", "chatBubblesPan")) {
+            game.settings.set("core", "chatBubblesPan", game.user.flags?.world?.globalInterfaceVolume ?? game.settings.get(MODULE_SCOPE, "chatBubblesPan"));
+        }
+    }
+
+});
 
 console.log(`Tablerules has been loaded (${performance.now() - start_time}ms).`);
