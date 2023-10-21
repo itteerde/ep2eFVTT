@@ -1,0 +1,65 @@
+{
+    "id": "tablerules",
+    "title": "ep2e - Tablerules",
+    "description": "Simple module to add and configure table rules and compendia for our games.",
+    "authors": [
+        {
+            "name": "Umbratica"
+        },
+        {
+            "name": "Tak"
+        },
+        {
+            "name": "PhDave"
+        }
+    ],
+    "version": "0.0.1",
+    "compatibility":{
+        "minimum": "11",
+        "verified": "11.313"
+    },
+    "scripts":[
+        "scripts/ep2e-tr.js"
+    ],
+    "packs":[
+        {
+            "name": "tablerules-macros",
+            "label": "Tablerules Macros",
+            "path": "packs/macros",
+            "type": "Macro",
+            "system": "?",
+            "flags":{}
+        }
+    ],
+    "packFolders": [
+        {
+          "name": "Tablerules",
+          "sorting": "a",
+          "color": "#ff0000",
+          "packs": [
+            "tablerules-macros"
+            ],
+          "folders": [
+          ]
+        }
+      ],
+    "url": "https://github.com/itteerde/ep2eFVTT/",
+    "manifest": "https://raw.githubusercontent.com/itteerde/ep2eFVTT/main/modules/ep2e-tr/module.json",
+    "download": "https://github.com/itteerde/ep2eFVTT/releases/download/v0.0.1/ep2e-tr.zip",
+    "relationships":{
+        "systems": [
+            {
+                "id": "?",
+                "type": "system",
+                "compatibility": {
+                    "minimum": "2.2.0",
+                    "verified": "2.3.0"
+                },
+                "manifest": "https://raw.githubusercontent.com/foundryvtt/?/master/system.json"
+            }
+
+        ],
+        "requires": [
+        ]
+    }
+}
