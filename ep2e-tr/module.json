@@ -44,7 +44,7 @@
         }
       ],
     "url": "https://github.com/itteerde/ep2eFVTT/",
-    "manifest": "https://raw.githubusercontent.com/itteerde/ep2eFVTT/main/modules/ep2e-tr/module.json",
+    "manifest": "https://raw.githubusercontent.com/itteerde/ep2eFVTT/main/ep2e-tr/module.json",
     "download": "https://github.com/itteerde/ep2eFVTT/releases/download/v0.0.1/ep2e-tr.zip",
     "relationships":{
         "systems": [

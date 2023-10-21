@@ -253,7 +253,7 @@ Hooks.on("ready", function () {
         ui.sidebar.tabs.playlists.render();
     }
 
-    if (game.seetings.get(MODULE_SCOPE, "modifyChatBubbles")) {
+    if (game.settings.get(MODULE_SCOPE, "modifyChatBubbles")) {
         if (Array.from(game.settings.settings, ([key, value]) => ({ key, value })).find(e => e.key === "core.chatBubbles").value.default === game.settings.get("core", "chatBubbles")) {
             game.settings.set("core", "chatBubbles", game.user.flags?.world?.globalInterfaceVolume ?? game.settings.get(MODULE_SCOPE, "chatBubbles"));
         }

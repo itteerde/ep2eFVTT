@@ -38,4 +38,6 @@ Eclipse Phase 2nd Edition Foundry VTT -- Tablerules and Configuration Module
 `game.modules.filter(m => m.active)` (might not order alphabetically, `id` is probably key for ordering while `title` is what we use). This list can be updated [by Macro](https://github.com/itteerde/fvttconfig/blob/main/tools/macros/dev/listModules.js). This list is supposed to be to real Production list. There might be a bit of a gap during preparing the next update. Maybe in the future it should reflect the accpeted list instead, which would mean it is either Production or what production is supposed to catch up soon, with the list already being somewhat approved.
 
 
+
 1. Dice Tray (version: 1.5.3) : [Project-URL](https://gitlab.com/asacolips-projects/foundry-mods/foundry-vtt-dice-calculator), [Manifest](https://gitlab.com/asacolips-projects/foundry-mods/foundry-vtt-dice-calculator/raw/master/module.json)
+1. ep2e - Tablerules (version: 0.0.1) : [Project-URL](https://github.com/itteerde/ep2eFVTT/), [Manifest](https://raw.githubusercontent.com/itteerde/ep2eFVTT/main/ep2e-tr/module.json)
