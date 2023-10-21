@@ -27,7 +27,7 @@
             "label": "Tablerules Macros",
             "path": "packs/macros",
             "type": "Macro",
-            "system": "?",
+            "system": "eclipsephase",
             "flags":{}
         }
     ],
@@ -49,13 +49,13 @@
     "relationships":{
         "systems": [
             {
-                "id": "?",
+                "id": "eclipsephase",
                 "type": "system",
                 "compatibility": {
                     "minimum": "2.2.0",
                     "verified": "2.3.0"
                 },
-                "manifest": "https://raw.githubusercontent.com/foundryvtt/?/master/system.json"
+                "manifest": "https://github.com/DerDiemen/eclipsephase2e-foundryVTT/raw/v0.9.8/system.json"
             }
 
         ],
