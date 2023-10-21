@@ -52,8 +52,8 @@
                 "id": "eclipsephase",
                 "type": "system",
                 "compatibility": {
-                    "minimum": "2.2.0",
-                    "verified": "2.3.0"
+                    "minimum": "0.9.8",
+                    "verified": "0.9.8"
                 },
                 "manifest": "https://github.com/DerDiemen/eclipsephase2e-foundryVTT/raw/v0.9.8/system.json"
             }
