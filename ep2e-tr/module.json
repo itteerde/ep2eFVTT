@@ -23,9 +23,25 @@
     ],
     "packs":[
         {
-            "name": "tablerules-macros",
-            "label": "Tablerules Macros",
-            "path": "packs/macros",
+            "name": "tablerules-items",
+            "label": "TR Items",
+            "path": "packs/items",
+            "type": "Item",
+            "system": "eclipsephase",
+            "flags":{}
+        },
+        {
+            "name": "tablerules-macros-gm",
+            "label": "TR Macros GM",
+            "path": "packs/macros_gm",
+            "type": "Macro",
+            "system": "eclipsephase",
+            "flags":{}
+        },
+        {
+            "name": "tablerules-macros-players",
+            "label": "TR Macros Players",
+            "path": "packs/macros_players",
             "type": "Macro",
             "system": "eclipsephase",
             "flags":{}
@@ -37,7 +53,9 @@
           "sorting": "a",
           "color": "#ff0000",
           "packs": [
-            "tablerules-macros"
+            "tablerules-items",
+            "tablerules-macros-gm",
+            "tablerules-macros-players"
             ],
           "folders": [
           ]
