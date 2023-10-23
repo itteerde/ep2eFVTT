@@ -17,5 +17,5 @@ ChatMessage.create({
 });
 
 tokens.forEach(t => {
-    t.actor.update({ "system.health.physical.value": t.actor.system.health.physical.value + 1 });
+    t.actor.update({ "system.health.physical.value": t.actor.system.health.physical.value + damage });
 });
