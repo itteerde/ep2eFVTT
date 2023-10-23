@@ -14,27 +14,27 @@ const party = partyIds.map(i => game.actors.get(i));
 //console.log(party);
 
 let dialogContent = `<div width=${width}px><h1>Summary</h1>`;
-dialogContent += party.reduce(function (html, actor) {
+dialogContent += party.reduce(function (html, a) {
     return html + `
         <div class="chat-message message" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items:left; align-content:center;">
-            <div>${actor.name}</div>
+            <div>${a.name}</div>
             <div>
-                <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i> ${actor.system.health.physical.value}/${actor.system.health.physical.max}/${actor.system.physical.dr}
+                <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i> ${a.system.health.physical.value}/${a.system.health.physical.max}/${a.system.physical.dr}
             </div>
             <div>
-                <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i> ${actor.system.physical.wounds === null ? 0 : actor.system.physical.wounds} (${actor.system.physical.wt})
+                <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i> ${a.system.physical.wounds === null ? 0 : a.system.physical.wounds} (${a.system.physical.wt})
             </div>
             <div>
-                <i class="fa-solid fa-brain awesomeIcon" style="font-size: 18px;"></i> ${actor.system.health.mental.value}/${actor.system.health.mental.max}/${actor.system.mental.ir}
+                <i class="fa-solid fa-brain awesomeIcon" style="font-size: 18px;"></i> ${a.system.health.mental.value}/${a.system.health.mental.max}/${a.system.mental.ir}
             </div>
             <div>
-                <i class="fa-regular fa-burst awesomeIcon" style="font-size: 18px;"></i> ${actor.system.mental.trauma === null ? 0 : actor.system.mental.trauma} (${actor.system.mental.tt})
+                <i class="fa-regular fa-burst awesomeIcon" style="font-size: 18px;"></i> ${a.system.mental.trauma === null ? 0 : a.system.mental.trauma} (${a.system.mental.tt})
             </div>
             <div>
-                A(E) ${actor.system.physical.energyArmorTotal}
+                A(E) ${a.system.physical.energyArmorTotal}
             </div>
             <div>
-                A(K) ${actor.system.physical.kineticArmorTotal}
+                A(K) ${a.system.physical.kineticArmorTotal}
             </div>
         </div>
     `;
