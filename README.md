@@ -30,6 +30,8 @@ Eclipse Phase 2nd Edition Foundry VTT -- Tablerules and Configuration Module
 | `manifest` | `https://github.com/DerDiemen/eclipsephase2e-foundryVTT/raw/v0.9.8/system.json` |
 | `url` | `https://github.com/DerDiemen/eclipsephase` |
 
+[Project-URL](https://github.com/DerDiemen/eclipsephase)
+
 
 ## Modules
 
