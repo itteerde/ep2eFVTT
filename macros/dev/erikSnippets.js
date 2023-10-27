@@ -282,3 +282,17 @@ game.folders.find(f => f.name === "PC").contents.forEach(a => {
     }
 });
 know
+
+
+crew = [];
+game.folders.find(f => f.name === "PC").contents.forEach(a => {
+    crew.push(game.actors.get(a._id))
+});
+crew
+
+function getCrewSkills(name) {
+
+}
+
+
+ChatMessage.create({ speaker: { alias: "TacNet" }, content: TRTacNet.shortenReportSkill(TRTacNet.reportSkill("Perceive")).reduce((acc, e) => acc + `<tr><td style="text-align: right; padding-right: 20px;">${e.name}</td><td style="text-align: left;">${e.value} => ${e.roll}</td></tr>`, `<h3 style="margin-bottom: 10px;">Perceive</h3><table>`) + "</table>" })
