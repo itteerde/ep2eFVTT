@@ -378,6 +378,30 @@ TREP2eDB.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
 });
 
+class TREP2Encyclopedia {
+    static r = { label: "root" };
+}
+
+function loadEncyclopedia() {
+    TREP2Encyclopedia.r["Factions"] = { description: "" };
+    TREP2eDB.factions.forEach(f => {
+        TREP2Encyclopedia.r.Factions[f.name] = { description: f.description };
+    });
+
+    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].cName = "The Lunar-Lagrange Alliance";
+    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].abbreviation = "LLA";
+    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].article = `
+        <div style="text-align: left;">
+            <h3 style="margin-bottom: 15px;">${TREP2Encyclopedia.r.Factions["Lunar/Orbital"].cName} (${TREP2Encyclopedia.r.Factions["Lunar/Orbital"].abbreviation})</h3>
+            <div style="margin-bottom: 5px;"><b>Memes:</b> Biochauvinism, Capitalism, Reclaiming Earth</div>
+            <div style="margin-bottom: 5px;"><b>Mein Habitats:</b> Erato (Luna), Remembrance (Earth Orbit), Shackle (Luna)</div>
+            <div style="margin-bottom: 5px;">The LLA: your grumpy Indian dad who is also a Swiss banker. Decried as obsolete by the Planetary Consortium, derided as stodgy and out of touch by the outer system, transhumanity’s first great off-world alliance plods on like a teflon baluchitherium. A number of settlements, including the largest Lunar city, Nectar, have defected to the Consortium, but Earth orbit and the two other big Lunar cities remain staunch Alliance members. Even though Luna might be the old and Mars the new, Luna’s advantage from being settled first hasn’t totally eroded.</div>
+        </div>`;
+}
+
+loadEncyclopedia();
+
+
 class TRTacNet {
     static reportSkill(name, folderName = "PC") {
         let skill = TREP2eDB.skills.find(s => s.name === name);
@@ -428,6 +452,72 @@ class TRTacNet {
                     modSkill.system.roll = a.system.skillsIns.survival.roll;
                 }
 
+                if (name === "Deceive") {
+                    modSkill.system.aptitude = "sav";
+                    modSkill.system.value = a.system.skillsMox.deceive.value;
+                    modSkill.system.roll = a.system.skillsMox.deceive.roll;
+                }
+
+                if (name === "Kinesics") {
+                    modSkill.system.aptitude = "sav";
+                    modSkill.system.value = a.system.skillsMox.kinesics.value;
+                    modSkill.system.roll = a.system.skillsMox.kinesics.roll;
+                }
+
+                if (name === "Persuade") {
+                    modSkill.system.aptitude = "sav";
+                    modSkill.system.value = a.system.skillsMox.persuade.value;
+                    modSkill.system.roll = a.system.skillsMox.persuade.roll;
+                }
+
+                if (name === "Provoke") {
+                    modSkill.system.aptitude = "sav";
+                    modSkill.system.value = a.system.skillsMox.provoke.value;
+                    modSkill.system.roll = a.system.skillsMox.provoke.roll;
+                }
+
+                if (name === "PSI") {
+                    modSkill.system.aptitude = "wil";
+                    modSkill.system.value = a.system.skillsMox.psi.value;
+                    modSkill.system.roll = a.system.skillsMox.psi.roll;
+                }
+
+                if (name === "Athletics") {
+                    modSkill.system.aptitude = "som";
+                    modSkill.system.value = a.system.skillsVig.athletics.value;
+                    modSkill.system.roll = a.system.skillsVig.athletics.roll;
+                }
+
+                if (name === "Fray") {
+                    modSkill.system.aptitude = "ref";
+                    modSkill.system.value = a.system.skillsVig.fray.value;
+                    modSkill.system.roll = a.system.skillsVig.fray.roll;
+                }
+
+                if (name === "Free Fall") {
+                    modSkill.system.aptitude = "som";
+                    modSkill.system.value = a.system.skillsVig["free fall"].value;
+                    modSkill.system.roll = a.system.skillsVig["free fall"].roll;
+                }
+
+                if (name === "Guns") {
+                    modSkill.system.aptitude = "ref";
+                    modSkill.system.value = a.system.skillsVig.guns.value;
+                    modSkill.system.roll = a.system.skillsVig.guns.roll;
+                }
+
+                if (name === "Infiltrate") {
+                    modSkill.system.aptitude = "ref";
+                    modSkill.system.value = a.system.skillsVig.infiltrate.value;
+                    modSkill.system.roll = a.system.skillsVig.infiltrate.roll;
+                }
+
+                if (name === "Melee") {
+                    modSkill.system.aptitude = "som";
+                    modSkill.system.value = a.system.skillsVig.melee.value;
+                    modSkill.system.roll = a.system.skillsVig.melee.roll;
+                }
+
                 report.experts.push({ actor: a, item: modSkill });
                 return;
             }
@@ -473,6 +563,9 @@ class TRTacNet {
     }
 
     static shortenReportSkill(report) {
+        if (report == null) {
+            return report;
+        }
         const shortForm = [];
         report.experts.forEach(e => {
             shortForm.push({ name: e.actor.name, value: e.item.system.value, roll: e.item.system.roll });

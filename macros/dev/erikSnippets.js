@@ -295,4 +295,36 @@ function getCrewSkills(name) {
 }
 
 
-ChatMessage.create({ speaker: { alias: "TacNet" }, content: TRTacNet.shortenReportSkill(TRTacNet.reportSkill("Perceive")).reduce((acc, e) => acc + `<tr><td style="text-align: right; padding-right: 20px;">${e.name}</td><td style="text-align: left;">${e.value} => ${e.roll}</td></tr>`, `<h3 style="margin-bottom: 10px;">Perceive</h3><table>`) + "</table>" })
+skillName = "Not a Skill";
+reportContent = TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName));
+reportContent = reportContent != null ? reportContent.reduce((acc, e) => acc + `<tr><td style="text-align: right; padding-right: 20px;">${e.name}</td><td style="text-align: left;">${e.value} => ${e.roll}</td></tr>`, `<h3 style="margin-bottom: 10px;">${skillName}</h3><table>`) + "</table>" : `<h3 style="margin-bottom: 10px;">${skillName}</h3><tr><td>none</td></tr></table>`;
+ChatMessage.create({ speaker: { alias: "TacNet" }, content: reportContent })
+
+TREP2eDB.skills.forEach(s => {
+    skillName = s.name;
+
+    reportContent = TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName));
+    reportContent = reportContent != null ? reportContent.reduce((acc, e) => acc + `<tr><td style="text-align: right; padding-right: 20px;">${e.name}</td><td style="text-align: left;">${e.value} => ${e.roll}</td></tr>`, `<h3 style="margin-bottom: 10px;">${skillName}</h3><table>`) + "</table>" : `<h3 style="margin-bottom: 10px;">${skillName}</h3><tr><td>none</td></tr></table>`;
+    ChatMessage.create({ speaker: { alias: "TacNet" }, content: reportContent });
+
+});
+
+ChatMessage.create({ speaker: { alias: "TacNet" }, content: `<div style="text-align: left;">${TREP2Encyclopedia.r.Factions.Argonaut}</div>` })
+
+
+crewReport = [];
+TREP2eDB.skills.forEach(s => {
+    crewReport.push({ skill: s.name, experts: TRTacNet.shortenReportSkill(TRTacNet.reportSkill(s.name)) })
+});
+reportString = "";
+crewReport.forEach(s => {
+    reportString += `${s.skill}\n`;
+    if (s.experts.length === 0) {
+        reportString += "    - ";
+    } else {
+        s.experts.forEach(e => {
+            reportString += `    ${e.name} (${e.value}, ${e.roll})\n`;
+        });
+    }
+    reportString += "\n";
+});
