@@ -57,7 +57,7 @@
         {
             "name": "tablerules-gamemechanics",
             "label": "Game Mechanics",
-            "path": "packs/encyclopedia",
+            "path": "packs/gamemechanics",
             "type": "JournalEntry",
             "system": "eclipsephase",
             "flags":{}
