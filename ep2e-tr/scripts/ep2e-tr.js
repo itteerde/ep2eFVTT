@@ -203,6 +203,21 @@ class Tablerules {
 }
 
 class TREP2eDB {
+
+    static sources = new Map();
+
+    /**
+     * for populating the sources Map only (readability and stuff)
+     * 
+     * name: technical name (our id, don't want to use id as we might want to put an external id in that property)
+     * cName: full human readable name
+     * label: for display purposes, probably always name
+     * bibLaTeX: for LaTeX citations
+     */
+    static sourcesArray = [
+        { name: "ep2e", cName: "Eclipse Phase 2nd Edition", label: "ep2e", bibLaTeX: "ep2e_1.1_2019" }
+    ];
+
     static skills = [
         { name: "Accounting", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
         { name: "Administration", types: ["Know", "Fielde", "Professional Training"], value: 0, aptitude: "Cognition" },
@@ -367,11 +382,25 @@ class TREP2eDB {
         { name: "Regional", description: "You are a Solarian, Sifter, Belter, Europan, Ringer, or Skimmer invested in the culture, prosperity, and security of your area of the Solar System." },
     ];
 
+    /**
+     * The Skills the System's author singled out to have special meaning and put into the EPactor model directly. For a more general approach they have to be unified with those they decided to implement as Item. There is nothing wrong with having a nice runtime solution (caching essentially) avoiding CPR's performance problems. The problem is that there is never one uniform database to refer to, even for operations than can be slow, like reporting. Therefore we create that single database independently and couple uni-directionally (we pull System data into the Module, instead of extending the System directly) and losely.
+     */
     static modelSkills = ["Infosec", "Interface", "Perceive", "Program", "Research", "Survival", "Deceive", "Kinesics", "Persuade", "Provoke", "PSI", "Athletics", "Fray", "Free Fall", "Guns", "Infiltrate", "Melee"];
+
+    /**
+     * Everything keywording/ tagging/ classifying in the rules should be available for computation.
+     */
+    static wareTypes = [
+        { name: null, abbreviation: null, description: null, source: { source: null, page: null } }
+    ];
 }
 
 TREP2eDB.factions.forEach(f => {
     TREP2eDB.skills.push({ name: f.name, types: ["Know", "Faction"], value: 0, aptitude: "Cognition" });
+});
+
+TREP2eDB.sourcesArray.forEach(s => {
+    TREP2eDB.sources.set(s.name, s); // there might be an argument for structuredClone
 });
 
 TREP2eDB.skills.sort((a, b) => {
