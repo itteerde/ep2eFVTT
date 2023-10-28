@@ -13,7 +13,7 @@
             "name": "PhDave"
         }
     ],
-    "version": "0.0.5",
+    "version": "0.0.6",
     "compatibility":{
         "minimum": "11",
         "verified": "11.313"
@@ -45,6 +45,22 @@
             "type": "Macro",
             "system": "eclipsephase",
             "flags":{}
+        },
+        {
+            "name": "tablerules-encyclopedia",
+            "label": "Encyclopedia",
+            "path": "packs/encyclopedia",
+            "type": "JournalEntry",
+            "system": "eclipsephase",
+            "flags":{}
+        },
+        {
+            "name": "tablerules-gamemechanics",
+            "label": "Game Mechanics",
+            "path": "packs/encyclopedia",
+            "type": "JournalEntry",
+            "system": "eclipsephase",
+            "flags":{}
         }
     ],
     "packFolders": [
@@ -55,7 +71,9 @@
           "packs": [
             "tablerules-items",
             "tablerules-macros-gm",
-            "tablerules-macros-players"
+            "tablerules-macros-players",
+            "tablerules-encyclopedia",
+            "tablerules-gamemechanics"
             ],
           "folders": [
           ]
