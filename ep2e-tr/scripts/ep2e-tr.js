@@ -407,29 +407,6 @@ TREP2eDB.skills.sort((a, b) => {
     return a.name.localeCompare(b.name);
 });
 
-class TREP2Encyclopedia {
-    static r = { label: "root" };
-}
-
-function loadEncyclopedia() {
-    TREP2Encyclopedia.r["Factions"] = { description: "" };
-    TREP2eDB.factions.forEach(f => {
-        TREP2Encyclopedia.r.Factions[f.name] = { description: f.description };
-    });
-
-    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].cName = "The Lunar-Lagrange Alliance";
-    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].abbreviation = "LLA";
-    TREP2Encyclopedia.r.Factions["Lunar/Orbital"].article = `
-        <div style="text-align: left;">
-            <h3 style="margin-bottom: 15px;">${TREP2Encyclopedia.r.Factions["Lunar/Orbital"].cName} (${TREP2Encyclopedia.r.Factions["Lunar/Orbital"].abbreviation})</h3>
-            <div style="margin-bottom: 5px;"><b>Memes:</b> Biochauvinism, Capitalism, Reclaiming Earth</div>
-            <div style="margin-bottom: 5px;"><b>Mein Habitats:</b> Erato (Luna), Remembrance (Earth Orbit), Shackle (Luna)</div>
-            <div style="margin-bottom: 5px;">The LLA: your grumpy Indian dad who is also a Swiss banker. Decried as obsolete by the Planetary Consortium, derided as stodgy and out of touch by the outer system, transhumanity’s first great off-world alliance plods on like a teflon baluchitherium. A number of settlements, including the largest Lunar city, Nectar, have defected to the Consortium, but Earth orbit and the two other big Lunar cities remain staunch Alliance members. Even though Luna might be the old and Mars the new, Luna’s advantage from being settled first hasn’t totally eroded.</div>
-        </div>`;
-}
-
-loadEncyclopedia();
-
 
 class TRTacNet {
     static reportSkill(name, folderName = "PC") {

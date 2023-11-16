@@ -328,3 +328,37 @@ crewReport.forEach(s => {
     }
     reportString += "\n";
 });
+
+
+ChatMessage.create({ speaker: { alias: `${game.user.name}@TacNet` }, content: `<div style="text-align: start;">Info@everyone: we are entering the control zone of</div><div style="text-align: right;">@UUID[Compendium.tablerules.tablerules-encyclopedia.JournalEntry.ahcYwaB503Emy9XL.JournalEntryPage.mrSJTlnHV8LthzM3]{Cannon}</div>` })
+
+game.folders.find(f => f.name === "PC").contents.map((actor) => {
+    return {
+        name: actor.name, skills: [
+            actor.items.filter(i => i.type === "specialSkill" || i.type === "knowSkill").reduce((acc, s) => acc + Number(s.system.value), 0),
+            Object.keys(actor.system.skillsIns).reduce((acc, k) => acc + actor.system.skillsIns[k].value, 0) +
+            Object.keys(actor.system.skillsMox).reduce((acc, k) => acc + actor.system.skillsMox[k].value, 0) +
+            Object.keys(actor.system.skillsVig).reduce((acc, k) => acc + actor.system.skillsVig[k].value, 0)
+        ]
+    }
+})
+
+game.folders.find(f => f.name === "PC").contents.map((actor) => {
+    return {
+        name: actor.name, skills: [
+            actor.items.filter(i => i.type === "specialSkill" || i.type === "knowSkill").reduce((acc, s) => acc + Number(s.system.value), 0),
+            Object.keys(actor.system.skillsIns).reduce((acc, k) => acc + actor.system.skillsIns[k].value, 0) +
+            Object.keys(actor.system.skillsMox).reduce((acc, k) => acc + actor.system.skillsMox[k].value, 0) +
+            Object.keys(actor.system.skillsVig).reduce((acc, k) => acc + actor.system.skillsVig[k].value, 0)
+        ]
+    }
+}).map((e) => { e.skills = e.skills.reduce((acc, s) => acc + s, 0); return e })
+
+[{ source: "background", skills: [40, 40, 30, 30, 30, 60, 30] }, { source: "career", skills: [30, 60, 60, 40, 30] }, { source: "interest", skills: [40, 40, 20, 40] }, { source: "faction", skills: [30] }].reduce((acc, s) => acc + s.skills.reduce((acc, s) => acc + s, 0), 0)
+
+await ChatMessage.create({ speaker: { alias: `${game.user.name}@TacNet` }, content: `unknown skills: ${[...new Set(TRTacNet.reportUnknownSkills().map(e => { return e.item.name }))].reduce((acc, e) => acc + e + ", ", "").slice(0, -2)}` })
+
+
+game.folders.find(f => f.name === "PC").contents.map(a => { return { name: a.name, pools: a.system.pools } }).map(e => { return { name: e.name, pools: `f:${e.pools.flex.value + 0}${e.pools.flex.mod}${e.pools.flex.totalFlex},i:${e.pools.insight.value + 0}${e.pools.insight.mod}${e.pools.insight.totalInsight},m:${e.pools.moxie.value + 0}${e.pools.moxie.mod}${e.pools.moxie.totalMoxie},v:${e.pools.vigor.value + 0}${e.pools.vigor.mod}${e.pools.vigor.totalVigor}` } })
+
+ChatMessage.create({ speaker: { alias: `${game.user.name}@TacNet` }, content: `reporting on personal resourcefulness: <table>${game.folders.find(f => f.name === "PC").contents.map(a => { return { name: a.name, pools: a.system.pools } }).map(e => { return { name: e.name, pools: `f:${e.pools.flex.value + 0}${e.pools.flex.mod}${e.pools.flex.totalFlex},i:${e.pools.insight.value + 0}${e.pools.insight.mod}${e.pools.insight.totalInsight},m:${e.pools.moxie.value + 0}${e.pools.moxie.mod}${e.pools.moxie.totalMoxie},v:${e.pools.vigor.value + 0}${e.pools.vigor.mod}${e.pools.vigor.totalVigor}` } }).map(e => { return `<tr><td>${e.name}</td><td>${e.pools}</td></tr>` })}</table>` })
