@@ -13,10 +13,10 @@
             "name": "PhDave"
         }
     ],
-    "version": "0.0.8",
+    "version": "0.0.9",
     "compatibility":{
         "minimum": "11",
-        "verified": "11.313"
+        "verified": "11.315"
     },
     "scripts":[
         "scripts/ep2e-tr.js"
@@ -47,17 +47,25 @@
             "flags":{}
         },
         {
-            "name": "tablerules-encyclopedia",
-            "label": "Encyclopedia",
-            "path": "packs/encyclopedia",
+            "name": "tablerules-tablerules",
+            "label": "Table Rules",
+            "path": "packs/tablerules",
             "type": "JournalEntry",
             "system": "eclipsephase",
             "flags":{}
         },
         {
-            "name": "tablerules-gamemechanics",
-            "label": "Game Mechanics",
-            "path": "packs/gamemechanics",
+            "name": "tablerules-book",
+            "label": "Eclipse Phase 2e",
+            "path": "packs/book",
+            "type": "JournalEntry",
+            "system": "eclipsephase",
+            "flags":{}
+        },
+        {
+            "name": "tablerules-qaa",
+            "label": "Questions & Answers",
+            "path": "packs/qaa",
             "type": "JournalEntry",
             "system": "eclipsephase",
             "flags":{}
@@ -72,8 +80,9 @@
             "tablerules-items",
             "tablerules-macros-gm",
             "tablerules-macros-players",
-            "tablerules-encyclopedia",
-            "tablerules-gamemechanics"
+            "tablerules-tablerules",
+            "tablerules-book",
+            "tablerules-qaa"
             ],
           "folders": [
           ]
