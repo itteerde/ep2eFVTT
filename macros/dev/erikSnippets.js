@@ -362,3 +362,14 @@ await ChatMessage.create({ speaker: { alias: `${game.user.name}@TacNet` }, conte
 game.folders.find(f => f.name === "PC").contents.map(a => { return { name: a.name, pools: a.system.pools } }).map(e => { return { name: e.name, pools: `f:${e.pools.flex.value + 0}${e.pools.flex.mod}${e.pools.flex.totalFlex},i:${e.pools.insight.value + 0}${e.pools.insight.mod}${e.pools.insight.totalInsight},m:${e.pools.moxie.value + 0}${e.pools.moxie.mod}${e.pools.moxie.totalMoxie},v:${e.pools.vigor.value + 0}${e.pools.vigor.mod}${e.pools.vigor.totalVigor}` } })
 
 ChatMessage.create({ speaker: { alias: `${game.user.name}@TacNet` }, content: `reporting on personal resourcefulness: <table>${game.folders.find(f => f.name === "PC").contents.map(a => { return { name: a.name, pools: a.system.pools } }).map(e => { return { name: e.name, pools: `f:${e.pools.flex.value + 0}${e.pools.flex.mod}${e.pools.flex.totalFlex},i:${e.pools.insight.value + 0}${e.pools.insight.mod}${e.pools.insight.totalInsight},m:${e.pools.moxie.value + 0}${e.pools.moxie.mod}${e.pools.moxie.totalMoxie},v:${e.pools.vigor.value + 0}${e.pools.vigor.mod}${e.pools.vigor.totalVigor}` } }).map(e => { return `<tr><td>${e.name}</td><td>${e.pools}</td></tr>` })}</table>` })
+
+game.folders.find(f => f.name === "PC").contents.map((actor) => {
+    return {
+        name: actor.name, skills: [
+            actor.items.filter(i => i.type === "specialSkill" || i.type === "knowSkill").reduce((acc, s) => acc + Number(s.roll), 0),
+            Object.keys(actor.system.skillsIns).reduce((acc, k) => acc + actor.system.skillsIns[k].roll, 0) +
+            Object.keys(actor.system.skillsMox).reduce((acc, k) => acc + actor.system.skillsMox[k].roll, 0) +
+            Object.keys(actor.system.skillsVig).reduce((acc, k) => acc + actor.system.skillsVig[k].roll, 0)
+        ]
+    }
+}).map((e) => { e.skills = e.skills.reduce((acc, s) => acc + s, 0); return e })
