@@ -69,6 +69,14 @@
             "type": "JournalEntry",
             "system": "eclipsephase",
             "flags":{}
+        },
+        {
+            "name": "tablerules-manuals",
+            "label": "Manuals",
+            "path": "packs/manuals",
+            "type": "JournalEntry",
+            "system": "eclipsephase",
+            "flags":{}
         }
     ],
     "packFolders": [
@@ -82,7 +90,8 @@
             "tablerules-macros-players",
             "tablerules-tablerules",
             "tablerules-book",
-            "tablerules-qaa"
+            "tablerules-qaa",
+            "tablerules-manuals"
             ],
           "folders": [
           ]
