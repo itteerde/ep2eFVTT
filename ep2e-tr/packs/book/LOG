@@ -1,12 +1,24 @@
-2023/11/21-15:08:34.063 4148 Recovering log #63
-2023/11/21-15:08:34.083 4148 Level-0 table #66: started
-2023/11/21-15:08:34.113 4148 Level-0 table #66: 2497403 bytes OK
-2023/11/21-15:08:34.123 4148 Delete type=0 #63
-2023/11/21-15:08:34.127 4148 Delete type=3 #59
-2023/11/21-19:28:39.819 1864 Compacting 2@0 + 1@1 files
-2023/11/21-19:28:39.849 1864 Generated table #68@0: 81 keys, 269992 bytes
-2023/11/21-19:28:39.849 1864 Compacted 2@0 + 1@1 files => 269992 bytes
-2023/11/21-19:28:39.854 1864 compacted to: files[ 0 1 0 0 0 0 0 ]
-2023/11/21-19:28:39.854 1864 Delete type=2 #62
-2023/11/21-19:28:39.854 1864 Delete type=2 #64
-2023/11/21-19:28:39.854 1864 Delete type=2 #66
+2023/11/22-14:47:28.218 dbc Recovering log #71
+2023/11/22-14:47:28.233 dbc Level-0 table #74: started
+2023/11/22-14:47:28.262 dbc Level-0 table #74: 1968142 bytes OK
+2023/11/22-14:47:28.278 dbc Delete type=0 #71
+2023/11/22-14:47:28.279 dbc Delete type=3 #69
+2023/11/22-15:42:31.055 2f5c Level-0 table #77: started
+2023/11/22-15:42:31.084 2f5c Level-0 table #77: 2617543 bytes OK
+2023/11/22-15:42:31.089 2f5c Delete type=0 #75
+2023/11/22-15:56:26.742 2f5c Compacting 2@0 + 1@1 files
+2023/11/22-15:56:26.772 2f5c Generated table #78@0: 391 keys, 425292 bytes
+2023/11/22-15:56:26.772 2f5c Compacted 2@0 + 1@1 files => 425292 bytes
+2023/11/22-15:56:26.776 2f5c compacted to: files[ 0 1 0 0 0 0 0 ]
+2023/11/22-15:56:26.776 2f5c Delete type=2 #72
+2023/11/22-15:56:26.776 2f5c Delete type=2 #74
+2023/11/22-15:56:26.777 2f5c Delete type=2 #77
+2023/11/22-16:26:16.496 2f5c Level-0 table #80: started
+2023/11/22-16:26:16.523 2f5c Level-0 table #80: 2112393 bytes OK
+2023/11/22-16:26:16.529 2f5c Delete type=0 #76
+2023/11/22-17:34:06.840 2f5c Level-0 table #82: started
+2023/11/22-17:34:06.884 2f5c Level-0 table #82: 2413241 bytes OK
+2023/11/22-17:34:06.887 2f5c Delete type=0 #79
+2023/11/22-18:05:07.105 2f5c Level-0 table #84: started
+2023/11/22-18:05:07.134 2f5c Level-0 table #84: 2158593 bytes OK
+2023/11/22-18:05:07.136 2f5c Delete type=0 #81
