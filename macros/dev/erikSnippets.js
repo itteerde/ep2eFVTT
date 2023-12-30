@@ -375,3 +375,8 @@ game.folders.find(f => f.name === "PC").contents.map((actor) => {
 }).map((e) => { e.skills = e.skills.reduce((acc, s) => acc + s, 0); return e })
 
 ChatMessage.create({ content: (await fromUuid("Compendium.tablerules.tablerules-book.JournalEntry.6fjV3w6cbOtx1U3l")).pages.getName("Apply Tag").text.content })
+
+
+
+let skillName = "Infosec";
+ChatMessage.create({ content: "<h3>" + skillName + "</h3><table>" + TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName)).reduce((acc, e) => { return acc += `<tr><td>${e.name}</td><td>${e.roll}</td></tr>`; }, "") + "</table>" });
