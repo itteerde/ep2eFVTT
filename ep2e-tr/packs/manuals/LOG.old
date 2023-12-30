@@ -1,3 +1,7 @@
-2023/11/26-04:29:52.554 be0 Recovering log #19
-2023/11/26-04:29:52.560 be0 Delete type=0 #19
-2023/11/26-04:29:52.560 be0 Delete type=3 #18
+2023/12/03-01:13:49.053 bac Recovering log #35
+2023/12/03-01:13:49.059 bac Delete type=0 #35
+2023/12/03-01:13:49.059 bac Delete type=3 #34
+2023/12/03-01:22:55.679 208c Level-0 table #39: started
+2023/12/03-01:22:55.687 208c Level-0 table #39: 833 bytes OK
+2023/12/03-01:22:55.695 208c Delete type=0 #37
+2023/12/03-01:22:55.703 208c Manual compaction at level-0 from '!journal!GrvezaMw0uHcCLAF' @ 72057594037927935 : 1 .. '!journal.pages!GrvezaMw0uHcCLAF.jgxPve0uqeb6x14W' @ 0 : 0; will stop at (end)
