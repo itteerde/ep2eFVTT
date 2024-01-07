@@ -614,6 +614,35 @@ class TRTacNet {
 
 Hooks.on('init', () => {
     TRUtils.registerSettings();
+
+    CONFIG.statusEffects = [
+        { id: "dead", name: "Dead", icon: "modules/tablerules/icons/statuses/dead.svg" },
+        { id: "unconscious", name: "Unconscious", icon: "modules/tablerules/icons/statuses/unconscious.svg" },
+        { id: "sleep", name: "Asleep", icon: "modules/tablerules/icons/statuses/sleep.svg" },
+        { id: "stun", name: "Stunned", icon: "modules/tablerules/icons/statuses/stunned.svg" },
+        { id: "prone", name: "Prone", icon: "modules/tablerules/icons/statuses/prone.svg" },
+        { id: "restrain", name: "Restrained", icon: "modules/tablerules/icons/statuses/restrained.svg" },
+        { id: "paralysis", name: "Paralysed", icon: "modules/tablerules/icons/statuses/paralysed.svg" },
+        { id: "fly", name: "Flying", icon: "modules/tablerules/icons/statuses/flying.svg" },
+        { id: "blind", name: "Blind", icon: "modules/tablerules/icons/statuses/blind.svg" },
+        { id: "deaf", name: "Deaf", icon: "modules/tablerules/icons/statuses/deaf.svg" },
+        { id: "burning", name: "Burning", icon: "modules/tablerules/icons/statuses/burning.svg" },
+        { id: "frozen", name: "Frozen", icon: "modules/tablerules/icons/statuses/frozen.svg" },
+        { id: "shock", name: "Shocked", icon: "modules/tablerules/icons/statuses/shocked.svg" },
+        { id: "corrode", name: "Corroding", icon: "modules/tablerules/icons/statuses/corroding.svg" },
+        { id: "disease", name: "Disease", icon: "modules/tablerules/icons/statuses/disease.svg" },
+        { id: "poison", name: "Poisoned", icon: "modules/tablerules/icons/statuses/poisoned.svg" },
+        { id: "upgrade", name: "Upgrade", icon: "modules/tablerules/icons/statuses/upgrade.svg" },
+        { id: "downgrade", name: "Downgrade", icon: "modules/tablerules/icons/statuses/downgrade.svg" },
+        { id: "invisible", name: "Invisible", icon: "modules/tablerules/icons/statuses/invisible.svg" },
+        { id: "target", name: "Target", icon: "modules/tablerules/icons/statuses/target.svg" },
+        { id: "dazed", name: "Dazed", icon: "modules/tablerules/icons/statuses/dazed.svg" },
+        { id: "grappled", name: "Grappled", icon: "modules/tablerules/icons/statuses/grappled.webp" },
+        { id: "speeding", name: "Speeding", icon: "modules/tablerules/icons/statuses/speeding.webp" },
+        { id: "privacy", name: "Privacy Mode", icon: "modules/tablerules/icons/statuses/privacy.webp" },
+    ];
+
+    CONFIG.statusEffects.sort((a, b) => a.name.localeCompare(b.name));
 });
 
 
