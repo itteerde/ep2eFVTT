@@ -641,6 +641,7 @@ Hooks.on('init', () => {
         { id: "grappled", name: "Grappled", icon: "modules/tablerules/icons/statuses/grappled.webp" },
         { id: "speeding", name: "Speeding", icon: "modules/tablerules/icons/statuses/speeding.webp" },
         { id: "privacy", name: "Privacy Mode", icon: "modules/tablerules/icons/statuses/privacy.webp" },
+        { id: "fullDefense", name: "Full Defense", icon: "modules/tablerules/icons/statuses/fullDefense.webp" },
     ];
 
     CONFIG.statusEffects.sort((a, b) => a.name.localeCompare(b.name));
