@@ -380,3 +380,4 @@ ChatMessage.create({ content: (await fromUuid("Compendium.tablerules.tablerules-
 
 let skillName = "Infosec";
 ChatMessage.create({ content: "<h3>" + skillName + "</h3><table>" + TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName)).reduce((acc, e) => { return acc += `<tr><td>${e.name}</td><td>${e.roll}</td></tr>`; }, "") + "</table>" });
+
