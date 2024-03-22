@@ -1,28 +1,64 @@
-let crew = game.folders.find(f => f.name === "PC").contents;
-TREP2eDB.skills
 
+const journalEntry = await fromUuid("JournalEntry.nvPwpZCN3IRuTwq2");
+const crew = game.folders.find(f => f.name === "PC").contents;
+const skills = TREP2eDB.skills;
 
+let skillsAllContent = ``;
+let skillsActiveContent = ``;
+let skillsKnowContent = ``;
 
+skills.forEach(skill => {
 
+    const page = journalEntry.pages.contents.find(p => p.name === skill.name);
+    const content = "<table>" + TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skill.name)).reduce((acc, e) => { return acc += `<tr><td>${e.name}</td><td>${e.roll}</td></tr>`; }, "") + "</table>" + `<div>Aptitude: ${skill.aptitude}</div><div>Types: ${skill.types.reduce((acc, t) => { return acc += t + ", " }, "")}</div>`;
 
-// create the Skill report table string
-const skillName = "Athletics";
-const skill = TREP2eDB.skills.find(s => s.name === skillName);
+    if (page === undefined) {
+        journalEntry.createEmbeddedDocuments("JournalEntryPage", [{ name: skill.name, type: "text", text: { content: content, format: 1, markdown: undefined } }]);
 
-console.log({ content: "<table>" + TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName)).reduce((acc, e) => { return acc += `<tr><td>${e.name}</td><td>${e.roll}</td></tr>`; }, "") + "</table>" + `<div>Aptitude: ${skill.aptitude}</div><div>Types: ${skill.types.reduce((acc, t) => { return acc += t + ", " }, "")}</div>` });
+        return;
+    }
 
+    page.update({ content: "<p></p>" + content });
 
-// create or update the JournalEntryPage for the Skill
-journal.createEmbeddedDocuments("JournalEntryPage", [{ name: "Athletics", type: "text", text: { content: "test athletics", format: 1, markdown: undefined } }])
+    skillsAllContent += `<p></p><h3>${skill.name}</h3>` + content;
+    if (skill.types.includes("Active")) {
+        skillsActiveContent += `<p></p><h3>${skill.name}</h3>` + content;
+    }
+    if (skill.types.includes("Know")) {
+        skillsKnowContent += `<p></p><h3>${skill.name}</h3>` + content;
+    }
+
+});
 
 
 // update the *, Active, Know Pages
+const pageSkillAll = journalEntry.pages.contents.find(p => p.name === `__Skills (*)`);
+if (pageSkillAll === undefined) {
+    journalEntry.createEmbeddedDocuments("JournalEntryPage", [{ name: `__Skills (*)`, type: "text", text: { content: skillsAllContent, format: 1, markdown: undefined } }]);
+} else {
+    await pageSkillAll.update({ "text.content": skillsAllContent });
+}
+
+const pageSkillActive = journalEntry.pages.contents.find(p => p.name === `__Skills (Active)`);
+if (pageSkillActive === undefined) {
+    journalEntry.createEmbeddedDocuments("JournalEntryPage", [{ name: `__Skills (Active)`, type: "text", text: { content: skillsActiveContent, format: 1, markdown: undefined } }]);
+} else {
+    await pageSkillActive.update({ "text.content": skillsActiveContent });
+}
+
+const pageSkillKnow = journalEntry.pages.contents.find(p => p.name === `__Skills (Know)`);
+if (pageSkillKnow === undefined) {
+    journalEntry.createEmbeddedDocuments("JournalEntryPage", [{ name: `__Skills (Know)`, type: "text", text: { content: skillsKnowContent, format: 1, markdown: undefined } }]);
+} else {
+    await pageSkillKnow.update({ "text.content": skillsKnowContent });
+}
 
 
 // sort JournalEntry
-const journalEntry = await fromUuid("JournalEntry.nvPwpZCN3IRuTwq2");
 const pages = journalEntry.pages.contents;
 const sorted = pages.toSorted((a, b) => a.name.localeCompare(b.name));
 const updates = sorted.map((e, i) => ({ _id: e.id, sort: 0 + i * CONST.SORT_INTEGER_DENSITY }));
-await journalEntry.updateEmbeddedDocuments("JournalEntryPage", updates);
+journalEntry.updateEmbeddedDocuments("JournalEntryPage", updates);
+
+
 
