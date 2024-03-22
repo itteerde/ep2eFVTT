@@ -36,3 +36,8 @@ ChatMessage.create({
         <div style="width: fit-content; font-size: smaller; font-family: Courier New, monospace; text-align: left;"><span style="color: #00cc00; font-weight: bold;">@crew: EGR established mesh defense and analytics services. Also, SimulSpace is available for recreational activities.</span></div>
     `
 });
+
+
+let text = `
+    <p><span style="color: #00cc00; font-weight: bold;">/&gt; model(habitat) | CoE</span></p>
+`;

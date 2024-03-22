@@ -6,3 +6,5 @@ const pages = journalEntry.pages.contents;
 const sorted = pages.toSorted((a, b) => a.name.localeCompare(b.name));
 const updates = sorted.map((e, i) => ({ _id: e.id, sort: 0 + i * CONST.SORT_INTEGER_DENSITY }));
 await journalEntry.updateEmbeddedDocuments("JournalEntryPage", updates);
+
+
