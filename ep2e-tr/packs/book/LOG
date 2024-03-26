@@ -1,5 +1,13 @@
-2024/01/15-17:43:45.555 29b4 Recovering log #252
-2024/01/15-17:43:45.558 29b4 Level-0 table #255: started
-2024/01/15-17:43:45.569 29b4 Level-0 table #255: 632378 bytes OK
-2024/01/15-17:43:45.578 29b4 Delete type=0 #252
-2024/01/15-17:43:45.578 29b4 Delete type=3 #250
+2024/03/26-18:02:47.361 30d4 Recovering log #282
+2024/03/26-18:02:47.371 30d4 Delete type=0 #282
+2024/03/26-18:02:47.371 30d4 Delete type=3 #280
+2024/03/26-18:03:00.095 1bec Compacting 2@0 + 1@1 files
+2024/03/26-18:03:00.138 1bec Generated table #285@0: 1218 keys, 1722737 bytes
+2024/03/26-18:03:00.138 1bec Compacted 2@0 + 1@1 files => 1722737 bytes
+2024/03/26-18:03:00.143 1bec compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/03/26-18:03:00.144 1bec Delete type=2 #273
+2024/03/26-18:03:00.144 1bec Delete type=2 #279
+2024/03/26-18:03:00.144 1bec Delete type=2 #281
+2024/03/26-18:17:41.109 1bec Level-0 table #287: started
+2024/03/26-18:17:41.130 1bec Level-0 table #287: 1795546 bytes OK
+2024/03/26-18:17:41.135 1bec Delete type=0 #284

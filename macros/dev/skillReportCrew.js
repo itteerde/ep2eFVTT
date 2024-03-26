@@ -1,3 +1,4 @@
+// use with care. This should not destroy anything other than the JournalEntry itself, but it would lag a lot with players connected. Better use right after backup without players connected
 
 const journalEntry = await fromUuid("JournalEntry.nvPwpZCN3IRuTwq2");
 const crew = game.folders.find(f => f.name === "PC").contents;
