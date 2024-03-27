@@ -382,3 +382,32 @@ let skillName = "Infosec";
 ChatMessage.create({ content: "<h3>" + skillName + "</h3><table>" + TRTacNet.shortenReportSkill(TRTacNet.reportSkill(skillName)).reduce((acc, e) => { return acc += `<tr><td>${e.name}</td><td>${e.roll}</td></tr>`; }, "") + "</table>" });
 
 actor.deleteEmbeddedDocuments("ActiveEffect", [actor.effects.contents.find(e => e.name === "Steve").id])
+
+
+// find actor not having an item
+game.folders.find(f => f.name === "PC").contents.filter(a => a.items.contents.find(i => i.name === "VPN") === undefined)
+
+// filter actors having an item
+game.folders.find(f => f.name === "PC").contents.filter(a => a.items.contents.find(i => i.name === "Ghostrider Module"))
+
+// report crew IDs
+game.folders.find(f => f.name === "PC").contents.map((a) => ({
+    id: a.name, alias:
+        a.system.ego.ids.id2.name + "," +
+        a.system.ego.ids.id3.name + "," +
+        a.system.ego.ids.id4.name + "," +
+        a.system.ego.ids.id5.name
+}))
+
+
+ChatMessage.create({
+    content: "<h3>Crew Alias</h3><table>" +
+        game.folders.find(f => f.name === "PC").contents.map((a) => ({
+            id: a.name, alias:
+                a.system.ego.ids.id2.name + "," +
+                a.system.ego.ids.id3.name + "," +
+                a.system.ego.ids.id4.name + "," +
+                a.system.ego.ids.id5.name
+        })).map(e => `<tr><td>${e.id}</td><td>${e.alias}</td></tr>`)
+        + "</table>"
+})
