@@ -404,11 +404,25 @@ class TREP2eDB {
     /**
      * Could alternatively put it all into a JournalEntry. Don't think making it EPItem is really an option though. And if that isn't an option I think this is better. Can a Module extend the data model?
      */
-    /*
     static gear = [
-        { name: "Cybercortex", classification: ["Mental Augmentation"], waretypes: ["C"], compexity: { complexity: "Mod", gp: 2, restricted: false }, description: "Designed for smart animals, this artificial cortex aid increases the creature’s ability to learn, comprehend instructions, and reason. It also overrides some instinctive behaviors that would be undesirable in a service animal. Apply a +10 modifier to Exotic Skill: Animal Handling Tests made against this creature, and apply a +10 modifier for COG Checks to understand commands.", source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 } }
+        {
+            name: "Cybercortex",
+            classification: ["Mental Augmentation"],
+            waretypes: ["C"],
+            compexity: { complexity: "Mod", gp: 2, restricted: false },
+            description: 'Designed for smart animals, this artificial cortex aid increases the creature’s ability to learn, comprehend instructions, and reason. It also overrides some instinctive behaviors that would be undesirable in a service animal. Apply a +10 modifier to Exotic Skill: Animal Handling Tests made against this creature, and apply a +10 modifier for COG Checks to understand commands.',
+            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 }
+        },
+        {
+            name: "Guardian Angel",
+            classification: ["Bot"],
+            waretypes: ["H"],
+            compexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'Similar to gnats, guardian angels are larger rotorcraft used for defensive purposes. They hover around their charges, keeping a watchful eye out to protect them from threats.',
+            statsblock: null, // this would be where the table with all the game mechanics goes, probably only useful if html ready to be rendered. The rendered content could be in Journal. Guess a few MByte on load and in memory are actually better than lagging the fromUUID loads. So no, if we do it we do it this way. Just might have to switch it to another data structure.
+            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 347 }
+        }
     ];
-    */
 }
 
 TREP2eDB.factions.forEach(f => {
