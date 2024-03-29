@@ -336,7 +336,7 @@ class TREP2eDB {
         { name: "Psychosurgery", types: ["Active", "Field", "Technical", "Medicine"], value: 0, aptitude: "Cognition" },
         { name: "Racketeering", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
         { name: "Reclaimer Blogs", types: ["Know", "Field", "Interests"], value: 0, aptitude: "Cognition" },
-        { name: "Research", types: ["Active", "Technical"], value: 0, aptitude: "Cognition" },
+        { name: "Research", types: ["Active", "Technical"], value: 0, aptitude: "Intuition" },
         { name: "Spaceship Models", types: ["Know", "Field", "Interests"], value: 0, aptitude: "Cognition" },
         { name: "Scavenging", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
         { name: "Sculpture", types: ["Know", "Field", "Arts"], value: 0, aptitude: "Intuition" },
@@ -402,6 +402,15 @@ class TREP2eDB {
     static wareTypes = [
         { name: null, abbreviation: null, description: null, source: { source: null, page: null } }
     ];
+
+    /**
+     * Could alternatively put it all into a JournalEntry. Don't think making it EPItem is really an option though. And if that isn't an option I think this is better. Can a Module extend the data model?
+     */
+    /*
+    static gear = [
+        { name: "Cybercortex", classification: ["Mental Augmentation"], waretypes: ["C"], compexity: { complexity: "Mod", gp: 2, restricted: false }, description: "Designed for smart animals, this artificial cortex aid increases the creature’s ability to learn, comprehend instructions, and reason. It also overrides some instinctive behaviors that would be undesirable in a service animal. Apply a +10 modifier to Exotic Skill: Animal Handling Tests made against this creature, and apply a +10 modifier for COG Checks to understand commands.", source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 } }
+    ];
+    */
 }
 
 TREP2eDB.factions.forEach(f => {

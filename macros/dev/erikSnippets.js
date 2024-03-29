@@ -390,6 +390,9 @@ game.folders.find(f => f.name === "PC").contents.filter(a => a.items.contents.fi
 // filter actors having an item
 game.folders.find(f => f.name === "PC").contents.filter(a => a.items.contents.find(i => i.name === "Ghostrider Module"))
 
+// find actors with items by criterion
+game.folders.find(f => f.name === "PC").contents.map(a => ({ name: a.name, items: a.items.filter(i => i.name === "VPN" || i.name === "Oracles") }))
+
 // report crew IDs
 game.folders.find(f => f.name === "PC").contents.map((a) => ({
     id: a.name, alias:
@@ -404,10 +407,7 @@ ChatMessage.create({
     content: "<h3>Crew Alias</h3><table>" +
         game.folders.find(f => f.name === "PC").contents.map((a) => ({
             id: a.name, alias:
-                a.system.ego.ids.id2.name + "," +
-                a.system.ego.ids.id3.name + "," +
-                a.system.ego.ids.id4.name + "," +
-                a.system.ego.ids.id5.name
+                a.system.ego.ids.id2.name
         })).map(e => `<tr><td>${e.id}</td><td>${e.alias}</td></tr>`)
         + "</table>"
 })

@@ -24,6 +24,10 @@ let text = `
     <p>/&gt; </p>
 `;
 
+let text = `
+    <p><span style="color: #00cc00; font-weight: bold;">/&gt; .\\print Gnat</span>
+`;
+
 await ChatMessage.create({
     speaker: { alias: `egr@egr.psv` },
     content: `
