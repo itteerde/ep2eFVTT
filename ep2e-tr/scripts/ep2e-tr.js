@@ -286,7 +286,6 @@ class TREP2eDB {
         { name: "Hardware: Robotics", types: ["Active", "Field", "Technical"], value: 0, aptitude: "Cognition", bookName: "Robotics (bots and synthmorphs)", source: { source: "ep2e", page: 49 } },
         { name: "History", types: ["Know", "Field", "Academics"], value: 0, aptitude: "Cognition" },
         { name: "Hypercorp Politics", types: ["Know", "Field", "Interests"], value: 0, aptitude: "Cognition" },
-        { name: "Industrial (factory, habitat, and life support systems)", types: ["Active", "Field", "Technical"], value: 0, aptitude: "Cognition" },
         { name: "Infiltrate", types: ["Active", "Physical"], value: 0, aptitude: "Reflexes" },
         { name: "Infosec", types: ["Active", "Technical"], value: 0, aptitude: "Cognition" },
         { name: "Instruction", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
