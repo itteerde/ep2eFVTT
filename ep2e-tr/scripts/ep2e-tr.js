@@ -315,7 +315,6 @@ class TREP2eDB {
         { name: "Music", types: ["Know", "Field", "Arts"], value: 0, aptitude: "Intuition" },
         { name: "Nanofacturing", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
         { name: "Nanotechnology", types: ["Know", "Field", "Academics"], value: 0, aptitude: "Cognition" },
-        { name: "Nautical (watercraft and submarines)", types: ["Active", "Field", "Technical"], value: 0, aptitude: "Cognition" },
         { name: "Network Engineering", types: ["Know", "Field", "Professional Training"], value: 0, aptitude: "Cognition" },
         { name: "Painting", types: ["Know", "Field", "Arts"], value: 0, aptitude: "Intuition" },
         { name: "Perceive", types: ["Active", "Combat"], value: 0, aptitude: "Intuition" },
