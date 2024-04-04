@@ -687,6 +687,7 @@ Hooks.on('init', () => {
         { id: "flexRed", name: "Flex (red)", icon: "modules/tablerules/icons/statuses/flexRed.webp" },
         { id: "flexYellow", name: "Flex (yellow)", icon: "modules/tablerules/icons/statuses/flexYellow.webp" },
         { id: "flexWhite", name: "Flex (white)", icon: "modules/tablerules/icons/statuses/flexWhite.webp" },
+        { id: "concentrating", name: "Concentrating", icon: "modules/tablerules/icons/statuses/concentrating.svg" }
     ];
 
     CONFIG.statusEffects.sort((a, b) => a.name.localeCompare(b.name));
