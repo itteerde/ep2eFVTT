@@ -406,6 +406,14 @@ class TREP2eDB {
      */
     static gear = [
         {
+            name: "Armor Clothing",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Min", gp: 1, restricted: false },
+            description: 'Resilient fibers and fullerenes are interwoven with normal smart materials to provide a subtle level of security. Such garments are indistinguishable from regular smart clothing and come in all styles and designs.',
+            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }
+        },
+        {
             name: "Cybercortex",
             classification: ["Mental Augmentation"],
             waretypes: ["C"],
