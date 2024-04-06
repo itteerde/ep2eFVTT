@@ -2,6 +2,7 @@ var start_time = performance.now();
 console.log("tablerules is loading.");
 
 const MODULE_SCOPE = "tablerules";
+const RARE_GP = 4;
 
 class TRUtils {
 
@@ -411,7 +412,85 @@ class TREP2eDB {
             waretypes: [],
             compexity: { compexity: "Min", gp: 1, restricted: false },
             description: 'Resilient fibers and fullerenes are interwoven with normal smart materials to provide a subtle level of security. Such garments are indistinguishable from regular smart clothing and come in all styles and designs.',
-            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }
+            notes: ["Concealable"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Armor Coat",
+            classification: ["Armor"],
+            wareTypes: [],
+            compexity:{ compexity: "Min", pg: 1, restricted: false },
+            description: 'Like armor clothing, this slightly bulkier coat provides a layer of discreet protection with smart material fabrics.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Armor Vest (Heavy)",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'Armor vests protect the body’s vital areas. Light vests cover the abdomen and torso and can be concealed under other clothing. Heavy vests are bulkier and obvious, protecting the neck with a rigid collar, and even providing wrap-under protection for the groin.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Armor Vest (Light)",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { compexity: "Min", gp: 1, restricted: false }, 
+            description: 'Armor vests protect the body’s vital areas. Light vests cover the abdomen and torso and can be concealed under other clothing. Heavy vests are bulkier and obvious, protecting the neck with a rigid collar, and even providing wrap-under protection for the groin.',
+            notes: ["Concealable"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Atlas Loader",
+            classification: ["Armor","Vehicle","Exoskeleton"],
+            waretypes: [],
+            compexity: { complexity: "Rare", gp: RARE_GP, restricted: false },
+            description: 'This common example of a heavy-use industrial exoskeleton is large (just over 3 meters tall) and designed for handling heavy/large objects. Though open frame, the wearer is partially protected by a meshed cage. Atlas’s provide a +2 bonus to Vigor pool and increase melee damage by +2d10. Melee damage also becomes armor-piercing.',
+            notes: [],
+            size: "VL",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 350 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }
+            ]
+        },
+        {
+            name: "Ballistic Shield",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { complexity: "Mod", gp: 2, restricted: false },
+            description: 'This heavy shield is essentially a portable barrier equipped with floodlights. It requires both hands to carry.',
+            notes: ["Two-Handed"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Battlesuit",
+            classification: ["Armor","Vehicle"],
+            waretypes: [],
+            compexity: { compexity: "Rare", gp: RARE_GP, restricted: true },
+            description: 'This power armor features a military-grade fullerene armor shell with flexible aerogel for thermal insulation and a diamond-hardened exterior designed to resist even potent ballistic and energy-based weapons. It increases Vigor pool by 2, inflicts an extra 1d10 damage in melee, increases your Walker movement rate to 8/32, and doubles your jumping distance.',
+            notes: [],
+            size: "L",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 351 }
+            ]
+        },
+        {
+            name: "Bioweave",
+            classification: ["Armor"],
+            waretypes: ["B"],
+            compexity: { complexity: "Min", gp: 1, restricted: false },
+            description: 'The morph’s dermal layers are laced with spidersilk fibers, providing protection without changing the appearance, texture, or sensitivity of the skin.',
+            notes: ["Concealable"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 214 }]
         },
         {
             name: "Cybercortex",
@@ -419,6 +498,8 @@ class TREP2eDB {
             waretypes: ["C"],
             compexity: { complexity: "Mod", gp: 2, restricted: false },
             description: 'Designed for smart animals, this artificial cortex aid increases the creature’s ability to learn, comprehend instructions, and reason. It also overrides some instinctive behaviors that would be undesirable in a service animal. Apply a +10 modifier to Exotic Skill: Animal Handling Tests made against this creature, and apply a +10 modifier for COG Checks to understand commands.',
+            notes: [],
+            size: "VS",
             source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 }
         },
         {
@@ -428,6 +509,8 @@ class TREP2eDB {
             compexity: { compexity: "Mod", gp: 2, restricted: false },
             description: 'Similar to gnats, guardian angels are larger rotorcraft used for defensive purposes. They hover around their charges, keeping a watchful eye out to protect them from threats.',
             statsblock: null, // this would be where the table with all the game mechanics goes, probably only useful if html ready to be rendered. The rendered content could be in Journal. Guess a few MByte on load and in memory are actually better than lagging the fromUUID loads. So no, if we do it we do it this way. Just might have to switch it to another data structure.
+            notes: [],
+            size: "S",
             source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 347 }
         }
     ];
