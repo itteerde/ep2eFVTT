@@ -420,7 +420,7 @@ class TREP2eDB {
             name: "Armor Coat",
             classification: ["Armor"],
             wareTypes: [],
-            compexity:{ compexity: "Min", pg: 1, restricted: false },
+            compexity: { compexity: "Min", pg: 1, restricted: false },
             description: 'Like armor clothing, this slightly bulkier coat provides a layer of discreet protection with smart material fabrics.',
             notes: [],
             size: "S",
@@ -440,7 +440,7 @@ class TREP2eDB {
             name: "Armor Vest (Light)",
             classification: ["Armor"],
             waretypes: [],
-            complexity: { compexity: "Min", gp: 1, restricted: false }, 
+            complexity: { compexity: "Min", gp: 1, restricted: false },
             description: 'Armor vests protect the body’s vital areas. Light vests cover the abdomen and torso and can be concealed under other clothing. Heavy vests are bulkier and obvious, protecting the neck with a rigid collar, and even providing wrap-under protection for the groin.',
             notes: ["Concealable"],
             size: "S",
@@ -448,7 +448,7 @@ class TREP2eDB {
         },
         {
             name: "Atlas Loader",
-            classification: ["Armor","Vehicle","Exoskeleton"],
+            classification: ["Armor", "Vehicle", "Exoskeleton"],
             waretypes: [],
             compexity: { complexity: "Rare", gp: RARE_GP, restricted: false },
             description: 'This common example of a heavy-use industrial exoskeleton is large (just over 3 meters tall) and designed for handling heavy/large objects. Though open frame, the wearer is partially protected by a meshed cage. Atlas’s provide a +2 bonus to Vigor pool and increase melee damage by +2d10. Melee damage also becomes armor-piercing.',
@@ -471,7 +471,7 @@ class TREP2eDB {
         },
         {
             name: "Battlesuit",
-            classification: ["Armor","Vehicle"],
+            classification: ["Armor", "Vehicle"],
             waretypes: [],
             compexity: { compexity: "Rare", gp: RARE_GP, restricted: true },
             description: 'This power armor features a military-grade fullerene armor shell with flexible aerogel for thermal insulation and a diamond-hardened exterior designed to resist even potent ballistic and energy-based weapons. It increases Vigor pool by 2, inflicts an extra 1d10 damage in melee, increases your Walker movement rate to 8/32, and doubles your jumping distance.',
@@ -493,6 +493,36 @@ class TREP2eDB {
             sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 214 }]
         },
         {
+            name: "Body Armor",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'These high performance armor outfits, typically worn by security and police forces, protect the wearer from head to toe. The integrated armor vest, helmet, gauntlets, and limb guards are form-fitting, flexible, and non-restrictive. The suit includes a built-in ecto, cameras, and health monitors.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Combat Armor",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { complexity: "Maj", gp: 3, restricted: true },
+            description: 'A tougher version of body armor worn by soldiers, this suit is environmentally sealed with climate control to protect the wearer from hostile environments and chemicals with 1 hour of air.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Crash Suit",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { complexity: "Min", gp: 1, restricted: false },
+            description: 'Designed for industrial workplace safety and protection from accidental zero-g collisions, crash suits are also favored by sports enthusiasts and explorers. The basic jumpsuit offers comfortable protection, but in more hazardous circumstances the suit can be activated with an electronic signal, so that elastic polymers stiffen and form rigid impact protection for vital areas.',
+            notes: ["Concealable"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
             name: "Cybercortex",
             classification: ["Mental Augmentation"],
             waretypes: ["C"],
@@ -500,7 +530,43 @@ class TREP2eDB {
             description: 'Designed for smart animals, this artificial cortex aid increases the creature’s ability to learn, comprehend instructions, and reason. It also overrides some instinctive behaviors that would be undesirable in a service animal. Apply a +10 modifier to Exotic Skill: Animal Handling Tests made against this creature, and apply a +10 modifier for COG Checks to understand commands.',
             notes: [],
             size: "VS",
-            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 }
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 320 }]
+        },
+        {
+            name: "Dermal Armor",
+            classification: ["Armor"],
+            waretypes: ["B"],
+            complexity: { complexity: "Min", gp: 1, restricted: false },
+            description: 'The morph is equipped with a dense layer of ballistic fibers and flexible subdermal plates. This does not reduce mobility, but it does make the skin smoother and less flexible (except at the joints), and the plated areas are visibly raised. The morph’s touch-based perception suffers a –20 modifier.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Envirosuit",
+            classification: ["Armor", "Hardsuit"],
+            waretypes: [],
+            complexity: { complexity: "Maj", gp: 3, restricted: false },
+            description: 'These shells feature both increased radiation shielding and thermal regulation systems to withstand extreme environments such as deep undersea and the surfaces of Mercury and Venus. They can withstand temperatures from –270 to 1,000 C.',
+            notes: [],
+            size: "M",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 351 }
+            ]
+        },
+        {
+            name: "Exowalker Frame",
+            classification: ["Armor", "Exoskeleton", "Vehicle"],
+            waretypes: [],
+            complexity: { compexity: "Maj", gp: 3, restricted: false },
+            description: 'Exowalkers are minimal framework exoskeletons, primarily designed to bolster the wearer’s strength and movement. They provide a +1 bonus to Vigor pool, increase melee damage by 1d6, increase your walker speed to 8/32 (fast), and double your jumping distance.',
+            notes: [],
+            size: "M",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 350 }
+            ]
         },
         {
             name: "Guardian Angel",
@@ -511,7 +577,155 @@ class TREP2eDB {
             statsblock: null, // this would be where the table with all the game mechanics goes, probably only useful if html ready to be rendered. The rendered content could be in Journal. Guess a few MByte on load and in memory are actually better than lagging the fromUUID loads. So no, if we do it we do it this way. Just might have to switch it to another data structure.
             notes: [],
             size: "S",
-            source: { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 347 }
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 347 }]
+        },
+        {
+            name: "Hardsuit",
+            classification: ["Armor", "Hardsuit"],
+            waretypes: [],
+            complexity: { compexity: "Rare", gp: 6, restricted: false },
+            description: 'This heavy-duty suit can almost be considered a miniature spaceship. It appears as a large metallic ovoid with jointed, servo-assisted arms and legs. It increases Vigor pool by 1 and inflicts an extra 1d10 damage in melee. Its miniature plasma thrusters are capable of delivering 0.01 g for 10 hours.',
+            notes: [],
+            size: "L",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 351 }
+            ]
+        },
+        {
+            name: "Heavy Combat Armor",
+            classification: ["Armor"],
+            waretypes: ["H"],
+            complexity: { complexity: "Maj", gp: 3, restricted: false },
+            description: 'These bulky and noticeable armor plates protect against heavy weaponry for serious combat operations. The shell’s mobility systems and power output are also modified to handle the extra mass.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Helmet",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Min", gp: 1, restricted: false },
+            description: 'Helmets come in various open and closed styles, all protecting the head. If targeted with a called shot, helmets have AV 4/10. Helmets are already included with body armor, combat armor, and all suits (use that armor´s full AV against called head shots).',
+            notes: ["AV 4/10 vs. head shots"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "High-Dive Suit",
+            classification: ["Armor", "Hardsuit"],
+            waretypes: [],
+            compexity: { compexity: "Maj", gp: 3, restricted: false },
+            description: 'High-dive suits are personal spacesuits designed to withstand atmospheric re-entry. Wearing one of these, you can step out a spacecraft in orbit around a planet, enter the atmosphere without burning up, and safely land using both drogue and conventional parachutes. High-dive suits are meant for unpowered descent only; they do not possess the capability for flight.',
+            notes: [],
+            size: "M",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 351 }
+            ]
+        },
+        {
+            name: "Industrial Armor",
+            classification: ["Armor"],
+            waretypes: ["H"],
+            compexity: { complexity: "Min", gp: 1, restricted: false },
+            description: 'This armor is designed to protect shells from collisions, extreme weather, industrial accidents, and similar wear-and-tear.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Light Combat Armor",
+            classification: ["Armor"],
+            waretypes: ["H"],
+            complexity: { complexity: "Mod", gp: 2, restricted: false },
+            description: 'This light plating is common for shells used in security and policing duties.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Riot Shield",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Min", gp: 1, restricted: false },
+            description: 'Used for mob suppression, riots shields are lightweight, tough, and can be set to electrify on command, (treat as a melee shock attack ▶219).',
+            notes: ["Shock, Touch-Only"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Scale/Carapace Armor",
+            classification: ["Armor"],
+            waretypes: ["B"],
+            complexity: { complexity: "Mod", gp: 2, restricted: false },
+            description: 'As dermal armor, but combined with hard but flexible external chitinous scales and/or plates, modeled on arthropod exoskeletons. This armor is obvious and the skin has the appearance of a crocodile, insect, pangolin, snake, or similarly armored creature.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Second Skin",
+            classification: ["Armor"],
+            waretypes: [],
+            complexity: { complexity: "Min", gp: 1, restricted: false },
+            description: 'This lightweight bodysuit, woven from spider silks and fullerenes, is typically worn as an underlayer, though some athletes use it as a uniform.',
+            notes: ["Concealable"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
+            name: "Transporter Exoskeleton",
+            classification: ["Armor", "Exoskeleton", "Vehicle"],
+            waretypes: [],
+            compexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'This exoskeleton framework features a pair of vector-thrust turbofan engines, giving you flight capabilities. Use Pilot: Air and a Movement Rate of 8/40 (very fast).',
+            notes: [],
+            size: "L",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 350 }
+            ]
+        },
+        {
+            name: "Trike Exoskeleton",
+            classification: ["Armor", "Exoskeleton", "Vehicle"],
+            waretypes: [],
+            compexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'The trike exoskeleton is a three-wheeled personal motorcycle design, rather than a walker. Use Pilot: Ground and a Movement Rate of 8/40 (very fast).',
+            notes: [],
+            size: "L",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 350 }
+            ]
+        },
+        {
+            name: "Vacsuit (Light)",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Mod", gp: 2, restricted: false },
+            description: 'Both smart-fabric and legacy light vacsuit models are ideal for less harsh environments such as Mars, the Venusian clouds, or exoplanets with moderate but unbreathable atmospheres. Their rebreathers provide 8 hours of air. All models include a headlight, an ecto, and atmospheric sensors. They protect you from temperatures from –75 to 100 C. These vacuum suits also provide an Armor Value of 5/2 and instantly self-seal breaches unless more than 20 points of damage are inflicted at once.',
+            notes: [],
+            size: "S",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 341 }
+            ]
+        },
+        {
+            name: "Vacsuit (Standard)",
+            classification: ["Armor"],
+            waretypes: [],
+            compexity: { compexity: "Maj", gp: 3, restricted: false },
+            description: 'Made from thicker and more durable materials, standard vacsuits provide 48 hours of air and incorporate an autocook capable of recycling all wastes and producing food and water indefinitely. Each suit is equipped with an ecto, a radio booster, specs, and atmospheric sensors. These suits have an Armor Value of 8/6 and protect you from temperatures from –175 to 140 C. They instantly seal any hole unless more than 30 points of damage are inflicted at once.',
+            notes: [],
+            size: "S",
+            sources: [
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 },
+                { source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 341 }
+            ]
         }
     ];
 }
