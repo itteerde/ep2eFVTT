@@ -53,16 +53,61 @@ async function reportBlueprints(database) {
         database = [
             {
                 member: "Adrian Uve", blueprints: [
-                    { name: "Armor Vest (Light)", pg: 214, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
-                    { name: "Medium Pistol (Firearm)", pg: 210, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "S" },
+                    { name: "Armor Vest (Light)", pg: 215, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Medium Pistol (Firearm)", pg: 210, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "VS" },
                     { name: "Smart Clothing", pg: 317, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
                     { name: "Enhanced Hearing", pg: 318, complexity: { complexity: "Min", pg: 1, restricted: false }, size: "VS" },
-                    { name: "Guardian Angel", pg: 346, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "S" }
+                    { name: "Guardian Angel", pg: 346, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "S" },
+                    { name: "Medium Fabber", pg: 343, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "M" },
+                    { name: "Nanodetector", pg: 343, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Neuromodulation", pg: 321, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "VS" },
+                    { name: "Stiff", pg: 335, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Speck", pg: 349, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" }
                 ]
             },
             {
                 member: "EGR_2.71828", blueprints: [
-
+                    { name: "Explorenaut", pg: 347, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "S" },
+                    { name: "DocBot", pg: 347, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "M" },
+                    { name: "Superthermite Charges", pg: 340, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "VS" }
+                ]
+            },
+            {
+                member: "Nilk Narf", blueprints: [
+                    { name: "Armor Vest (Light)", pg: 215, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Shard Pistol", pg: 209, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "VS" },
+                    { name: "Smart Clothing", pg: 317, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Covert Operations Tool (COT)", pg: 338, complexity: { complexity: "Maj", gp: 3, restricted: true }, size: "VS" },
+                    { name: "Healing Spray", pg: 343, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Med Scanner", pg: 343, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "VS" },
+                    { name: "Standard Vacsuit", pg: 341, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "S" },
+                    { name: "Meds", pg: 332, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "VS" }
+                ]
+            },
+            {
+                member: "Sith", blueprints: [
+                    { name: "Armor Vest (Light)", pg: 215, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Medium Pistol (Firearm)", pg: 210, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "VS" },
+                    { name: "Smart Clothing", pg: 317, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Chameleon Cloak", pg: 338, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "S" },
+                    { name: "Claws", pg: 204, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Flex Cutter", pg: 204, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Muscle Augmentation", pg: 322, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "S" },
+                    { name: "Shock Glove", pg: 204, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" },
+                    { name: "Shredder", pg: 209, complexity: { complexity: "Mod", gp: 2, restricted: true }, size: "VS" }
+                ]
+            },
+            {
+                member: "SysRig.ExE", blue: [
+                    { name: "Large Fabber", pg: 343, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "L" },
+                    { name: "Drone Rig", pg: 320, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "VS" },
+                    { name: "Automech", pg: 349, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "M" },
+                    { name: "Hand Laser", pg: 208, complexity: { complexity: "Mod", gp: 2, restricted: true }, size: "VS" },
+                    { name: "Robomule", pg: 349, complexity: { complexity: "Mod", gp: 2, restricted: true }, size: "M" },
+                    { name: "Guardian Angel", pg: 346, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "S" },
+                    { name: "Fixer Swarm", pg: 345, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "VS" },
+                    { name: "Gnat", pg: 348, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Spy Swarm", pg: 345, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "VS" }
                 ]
             }
         ];
