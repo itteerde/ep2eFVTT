@@ -470,6 +470,16 @@ class TREP2eDB {
             sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
         },
         {
+            name: "Battle Laser",
+            classification: ["Beam Weapon"],
+            waretypes: [],
+            complexity: { compexity: "Maj", gp: 3, restricted: true },
+            description: 'This heavy laser pulser is typically mounted and used for battlefield support, firing more powerful beams than the standard laser pulser.',
+            notes: ["Fixed", "Long"],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 208 }]
+        },
+        {
             name: "Battlesuit",
             classification: ["Armor", "Vehicle"],
             waretypes: [],
@@ -578,6 +588,16 @@ class TREP2eDB {
             notes: [],
             size: "S",
             sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 347 }]
+        },
+        {
+            name: "Hand Laser",
+            classification: ["Beam Weapon"],
+            waretypes: ["C", "H"],
+            compexity: { compexity: "Mod", gp: 2, restricted: true },
+            description: 'The morph has a weapon-grade laser implanted in its forearm, with a flexible waveguide leading to a lens located between the first two knuckles on the morph’s dominant hand. The laser’s  batteries are implanted and not easily swapped out in biomorphs.',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 208 }]
         },
         {
             name: "Hardsuit",
