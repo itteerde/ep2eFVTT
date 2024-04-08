@@ -666,6 +666,16 @@ class TREP2eDB {
             sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
         },
         {
+            name: "Medium Pistol (Firearm)",
+            classification: ["Kinetic Weapon", "Firearm"],
+            waretypes: [],
+            compexity: { compexity: "Min", gp: 1, restricted: true },
+            description: '',
+            notes: [],
+            size: "S",
+            sources: [{ source: this.sourcesArray.find(s => s.name === "ep2e"), pg: 215 }]
+        },
+        {
             name: "Riot Shield",
             classification: ["Armor"],
             waretypes: [],

@@ -9,9 +9,9 @@
  */
 let printingHost = await fromUuid("");
 
-let printingService = printingHost.getFlag("world","printingService");
-if(!printingService){
-    printingService = { 
+let printingService = printingHost.getFlag("world", "printingService");
+if (!printingService) {
+    printingService = {
         fabbers: { smallFabbers: 0, mediumFabbers: 0, largeFabbers: 0, miniFacs: 0 },
         queue: [],
         jobsRunning: []
@@ -24,20 +24,50 @@ if(!printingService){
  * @param {*} item 
  * @param {*} amount 
  */
-function addPrintJob(item, amount){
+function addPrintJob(item, amount) {
 
 }
 
 /**
  * Update the timing (from server time), and probable report items completed.
  */
-function updateTime(){
+function updateTime() {
 
 }
 
 /**
  * Report the status of the printing services, number of fabbers, jobs running with time remaining, queue and time expected for queue. I think it is not really possible to make this pretty for ChatMessage, but I do believe creating a proper report writing a JournalEntryPage would be easy enough.
  */
-function report(){
+function report() {
 
+}
+
+async function reportBlueprints(database) {
+    const crewHomePage = await fromUuid("JournalEntry.nvPwpZCN3IRuTwq2.JournalEntryPage.UF1YHNJk9JKjbUzP");
+    if (!crewHomePage) {
+        console.log("no crew home page found");
+        return;
+    }
+
+    if (!database) {
+        database = [
+            {
+                member: "Adrian Uve", blueprints: [
+                    { name: "Armor Vest (Light)", pg: 214, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Medium Pistol (Firearm)", pg: 210, complexity: { complexity: "Min", gp: 1, restricted: true }, size: "S" },
+                    { name: "Smart Clothing", pg: 317, complexity: { complexity: "Min", gp: 1, restricted: false }, size: "S" },
+                    { name: "Enhanced Hearing", pg: 318, complexity: { complexity: "Min", pg: 1, restricted: false }, size: "VS" },
+                    { name: "Guardian Angel", pg: 346, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "S" }
+                ]
+            },
+            {
+                member: "EGR_2.71828", blueprints: [
+
+                ]
+            }
+        ];
+    }
+
+    await crewHomePage.setFlag("world", "blueprints", database);
+    return database;
 }
