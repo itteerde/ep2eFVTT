@@ -1095,4 +1095,8 @@ Hooks.on("ready", function () {
 
 });
 
+Hooks.on("updateActor", async function (actor, system, diff, id) {
+    await actor.update({ "system.hp": { max: actor.system.health.physical.max, value: actor.system.health.physical.max - actor.system.health.physical.value } });
+});
+
 console.log(`Tablerules has been loaded (${performance.now() - start_time}ms).`);
