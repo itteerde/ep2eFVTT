@@ -98,7 +98,7 @@ async function reportBlueprints(database) {
                 ]
             },
             {
-                member: "SysRig.ExE", blue: [
+                member: "SysRig.ExE", blueprints: [
                     { name: "Large Fabber", pg: 343, complexity: { complexity: "Maj", gp: 3, restricted: false }, size: "L" },
                     { name: "Drone Rig", pg: 320, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "VS" },
                     { name: "Automech", pg: 349, complexity: { complexity: "Mod", gp: 2, restricted: false }, size: "M" },
@@ -115,4 +115,20 @@ async function reportBlueprints(database) {
 
     await crewHomePage.setFlag("world", "blueprints", database);
     return database;
+}
+
+function renderToJournal() {
+
+    content = ``;
+
+    for (member of database) {
+        content += `<h2>${member.member}</h2>`;
+        content += `<table>`;
+        for (blueprint of member.blueprints) {
+            content += `<tr><td style="width:60%">${blueprint.name}</td><td style="width:10%">${blueprint.pg}</td><td style="width:20%">${blueprint.complexity.complexity}${blueprint.complexity.restricted ? "/R" : ""}/${blueprint.complexity.gp}</td><td style="width:10%">${blueprint.size}</td></tr>`;
+        }
+        content += `</table>`
+    }
+
+    return content;
 }
