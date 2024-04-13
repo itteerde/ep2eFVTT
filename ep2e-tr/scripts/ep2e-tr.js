@@ -21,6 +21,16 @@ class TRUtils {
             requiresReload: true
         });
 
+        game.settings.register(MODULE_SCOPE, "healthBarHack", {
+            name: "Use Healt Bar Hack",
+            hint: "on updateActor modifies the system data with system.hp which has the structure to be displayed as a health bar on token with the correct coloring (dropping dur remaining).",
+            scope: "world",
+            config: true,
+            default: false,
+            type: Boolean,
+            requiresReload: true
+        });
+
         game.settings.register(MODULE_SCOPE, "whispersIncludeGM", {
             name: "Whispers, add GM",
             hint: "adds the GM to all whispered chat messages",
@@ -1096,7 +1106,10 @@ Hooks.on("ready", function () {
 });
 
 Hooks.on("updateActor", async function (actor, system, diff, id) {
-    await actor.update({ "system.hp": { max: actor.system.health.physical.max, value: actor.system.health.physical.max - actor.system.health.physical.value } });
+    if (game.settings.get(MODULE_SCOPE, "healthBarHack")) {
+        await actor.update({ "system.hp": { max: actor.system.health.physical.max, value: actor.system.health.physical.max - actor.system.health.physical.value } });
+    }
 });
+
 
 console.log(`Tablerules has been loaded (${performance.now() - start_time}ms).`);
