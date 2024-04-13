@@ -1032,7 +1032,20 @@ Hooks.on('init', () => {
         { id: "flexRed", name: "Flex (red)", icon: "modules/tablerules/icons/statuses/flexRed.webp" },
         { id: "flexYellow", name: "Flex (yellow)", icon: "modules/tablerules/icons/statuses/flexYellow.webp" },
         { id: "flexWhite", name: "Flex (white)", icon: "modules/tablerules/icons/statuses/flexWhite.webp" },
-        { id: "concentrating", name: "Concentrating", icon: "modules/tablerules/icons/statuses/concentrating.svg" }
+        { id: "concentrating", name: "Concentrating", icon: "modules/tablerules/icons/statuses/concentrating.svg" },
+        { id: "impairedSenses10", name: "Impaired Senses (-10)", icon: "modules/tablerules/icons/statuses/impairedSensesYellow.webp" },
+        { id: "impairedSenses20", name: "Impaired Senses (-20)", icon: "modules/tablerules/icons/statuses/impairedSensesOrange.webp" },
+        { id: "impairedSenses30", name: "Impaired Senses (-30)", icon: "modules/tablerules/icons/statuses/impairedSensesRed.webp" },
+        { id: "intruderStatusHidden", name: "Intruder Status: Hidden", icon: "modules/tablerules/icons/statuses/hidden.svg" },
+        { id: "intruderStatusCovert", name: "Intruder Status: Covert", icon: "modules/tablerules/icons/statuses/covert.webp" },
+        { id: "intruderStatusSpotted", name: "Intruder Status: Spotted", icon: "modules/tablerules/icons/statuses/spotted.svg" },
+        { id: "privilegesPublic", name: "Privileges: Public", icon: "modules/tablerules/icons/statuses/privilegesPublic.svg" },
+        { id: "privilegesUser", name: "Privileges: User", icon: "modules/tablerules/icons/statuses/privilegesUser.svg" },
+        { id: "privilegesSecurity", name: "Privileges: Security", icon: "modules/tablerules/icons/statuses/privilegesSecurity.svg" },
+        { id: "privilegesAdmin", name: "Privileges: Admin", icon: "modules/tablerules/icons/statuses/privilegesAdmin.svg" },
+        { id: "activeDefense", name: "Active Defense", icon: "modules/tablerules/icons/statuses/activeDefense.svg" },
+        { id: "alertPassive", name: "Alert (Passive)", icon: "modules/tablerules/icons/statuses/alertPassive.svg" },
+        { id: "alertActive", name: "Alert (Active)", icon: "modules/tablerules/icons/statuses/alertActive.svg" }
     ];
 
     CONFIG.statusEffects.sort((a, b) => a.name.localeCompare(b.name));
