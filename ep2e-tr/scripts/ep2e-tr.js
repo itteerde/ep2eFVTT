@@ -137,6 +137,12 @@ class TRUtils {
             requiresReload: true
         });
     }
+
+    static renderGearToChat(item) {
+        if (!item) {
+            ChatMessage.create({ content: `cannot render, item: ${item}` });
+        }
+    }
 }
 
 class Tablerules {
@@ -1045,7 +1051,8 @@ Hooks.on('init', () => {
         { id: "privilegesAdmin", name: "Privileges: Admin", icon: "modules/tablerules/icons/statuses/privilegesAdmin.svg" },
         { id: "activeDefense", name: "Active Defense", icon: "modules/tablerules/icons/statuses/activeDefense.svg" },
         { id: "alertPassive", name: "Alert (Passive)", icon: "modules/tablerules/icons/statuses/alertPassive.svg" },
-        { id: "alertActive", name: "Alert (Active)", icon: "modules/tablerules/icons/statuses/alertActive.svg" }
+        { id: "alertActive", name: "Alert (Active)", icon: "modules/tablerules/icons/statuses/alertActive.svg" },
+        { id: "defensiveMode", name: "Defensive Mode", icon: "modules/tablerules/icons/statuses/defensiveMode.svg" }
     ];
 
     CONFIG.statusEffects.sort((a, b) => a.name.localeCompare(b.name));
